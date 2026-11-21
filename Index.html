@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixso HTML</title>
+  <link rel="stylesheet" href="css/font.css">
+  <script src="js/animation.js"></script>
+  <style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ol,ul,menu {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+ol li::marker, ul li::before {
+  letter-spacing: 0;
+}
+
+.scroll-container > div {
+  width: 100%;
+}
+
+.container > div {
+  width: 100%;
+}
+
+.Pixso-canvas-0_1 > div {
+  width: 100%;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body { 
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: white;
+}
+    
+span {
+  word-break: break-word;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.Pixso-canvas-0_1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-frame-2_1,.Pixso-frame-2_23,.Pixso-frame-2_54,.Pixso-frame-2_63,.Pixso-frame-2_74,.Pixso-frame-2_85 {
+  height: 932px;
+  min-width: 430px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.Pixso-frame-2_1,.Pixso-frame-2_23 {
+  width: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-rectangle-2_4,.Pixso-rectangle-2_24,.Pixso-rectangle-2_55,.Pixso-rectangle-2_64,.Pixso-rectangle-2_75,.Pixso-rectangle-2_86 {
+  height: 83px;
+  top: 780px;
+  border-radius: 106px 106px 106px 106px;
+}
+
+.Pixso-rectangle-2_4,.Pixso-rectangle-2_24 {
+  width: 349px;
+  position: absolute;
+  left: 41px;
+  background-color: rgba(199, 9, 9, 0.74);
+}
+
+.Pixso-group-2_9 {
+  width: 211px;
+  height: 64px;
+  position: absolute;
+  left: 110px;
+  top: 240px;
+}
+
+.Pixso-paragraph-2_6,.Pixso-paragraph-2_26,.Pixso-paragraph-2_7,.Pixso-paragraph-2_27,.Pixso-paragraph-2_8,.Pixso-paragraph-2_11,.Pixso-paragraph-2_101,.Pixso-paragraph-2_28,.Pixso-text-2_53,.Pixso-paragraph-2_57,.Pixso-paragraph-2_58,.Pixso-paragraph-2_59,.Pixso-text-2_61,.Pixso-text-2_62,.Pixso-paragraph-2_66,.Pixso-paragraph-2_67,.Pixso-paragraph-2_68,.Pixso-text-2_70,.Pixso-text-2_71,.Pixso-paragraph-2_72,.Pixso-paragraph-2_77,.Pixso-paragraph-2_78,.Pixso-paragraph-2_79,.Pixso-text-2_81,.Pixso-text-2_82,.Pixso-paragraph-2_83,.Pixso-paragraph-2_84,.Pixso-paragraph-2_88,.Pixso-paragraph-2_89,.Pixso-paragraph-2_90,.Pixso-text-2_92,.Pixso-text-2_93,.Pixso-paragraph-2_94,.Pixso-paragraph-2_95,.Pixso-paragraph-2_96 {
+  text-align: left;
+  letter-spacing: 0px;
+  width: auto;
+  height: auto;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-2_6,.Pixso-paragraph-2_26,.Pixso-paragraph-2_7,.Pixso-paragraph-2_27,.Pixso-paragraph-2_8 {
+  text-decoration: none;
+  position: absolute;
+  white-space: pre;
+}
+
+.Pixso-paragraph-2_6,.Pixso-paragraph-2_26,.Pixso-paragraph-2_57,.Pixso-paragraph-2_66,.Pixso-paragraph-2_77,.Pixso-paragraph-2_88 {
+  font-size: 36px;
+  top: 0px;
+}
+
+.Pixso-paragraph-2_6,.Pixso-paragraph-2_26,.Pixso-paragraph-2_7,.Pixso-paragraph-2_27,.Pixso-paragraph-2_57,.Pixso-paragraph-2_58,.Pixso-paragraph-2_66,.Pixso-paragraph-2_67,.Pixso-paragraph-2_77,.Pixso-paragraph-2_78,.Pixso-paragraph-2_88,.Pixso-paragraph-2_89 {
+  font-family: "SF Pro Display-Bold";
+  font-weight: 700;
+  left: 0px;
+}
+
+.Pixso-paragraph-2_6,.Pixso-paragraph-2_26,.Pixso-paragraph-2_57,.Pixso-paragraph-2_66,.Pixso-paragraph-2_77,.Pixso-paragraph-2_88 {
+  color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-paragraph-2_7,.Pixso-paragraph-2_27,.Pixso-paragraph-2_58,.Pixso-paragraph-2_67,.Pixso-paragraph-2_78,.Pixso-paragraph-2_89 {
+  font-size: 18px;
+  color: rgba(183, 183, 183, 1);
+  top: 43px;
+}
+
+.Pixso-paragraph-2_8,.Pixso-paragraph-2_11,.Pixso-paragraph-2_101,.Pixso-paragraph-2_28,.Pixso-text-2_53,.Pixso-paragraph-2_59,.Pixso-text-2_61,.Pixso-text-2_62,.Pixso-paragraph-2_68,.Pixso-text-2_70,.Pixso-text-2_71,.Pixso-paragraph-2_72,.Pixso-paragraph-2_79,.Pixso-text-2_81,.Pixso-text-2_82,.Pixso-paragraph-2_83,.Pixso-paragraph-2_84,.Pixso-paragraph-2_90,.Pixso-text-2_92,.Pixso-text-2_93,.Pixso-paragraph-2_94,.Pixso-paragraph-2_95,.Pixso-paragraph-2_96 {
+  font-family: "Asul-Regular";
+  font-weight: 400;
+}
+
+.Pixso-paragraph-2_8 {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 1);
+  left: 157px;
+  top: 807px;
+}
+
+.Pixso-rectangle-2_10,.Pixso-rectangle-2_29,.Pixso-rectangle-2_60,.Pixso-rectangle-2_69,.Pixso-rectangle-2_80,.Pixso-rectangle-2_91 {
+  border-radius: 16px 16px 16px 16px;
+  background-color: rgba(50, 50, 50, 0.94);
+}
+
+.Pixso-rectangle-2_10 {
+  width: 211px;
+  height: 71px;
+  position: absolute;
+  left: 110px;
+  top: 466px;
+}
+
+.Pixso-paragraph-2_11,.Pixso-paragraph-2_101 {
+  font-size: 24px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  white-space: pre;
+}
+
+.Pixso-paragraph-2_11 {
+  left: 157px;
+  top: 487px;
+}
+
+.Pixso-paragraph-2_101 {
+  left: 130px;
+  top: 318px;
+}
+
+.Pixso-group-2_25 {
+  width: 211px;
+  height: 64px;
+  position: absolute;
+  left: 41px;
+  top: 106px;
+}
+
+.Pixso-paragraph-2_28 {
+  font-size: 24px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 124px;
+  top: 807px;
+  white-space: pre;
+}
+
+.Pixso-rectangle-2_29,.Pixso-rectangle-2_60,.Pixso-rectangle-2_69,.Pixso-rectangle-2_80,.Pixso-rectangle-2_91 {
+  height: 536px;
+  top: 207px;
+}
+
+.Pixso-rectangle-2_29 {
+  width: 349px;
+  position: absolute;
+  left: 41px;
+}
+
+.Pixso-text-2_53 {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 56px;
+  top: 234px;
+  white-space: nowrap;
+}
+
+.Pixso-paragraph-2_53_0,.Pixso-span-2_53_0_1,.Pixso-paragraph-2_53_1,.Pixso-span-2_53_1_1,.Pixso-frame-2_54 {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-paragraph-2_53_0,.Pixso-paragraph-2_53_1,.Pixso-paragraph-2_61_0,.Pixso-paragraph-2_61_1,.Pixso-paragraph-2_62_0,.Pixso-paragraph-2_62_1,.Pixso-paragraph-2_70_0,.Pixso-paragraph-2_70_1,.Pixso-paragraph-2_71_0,.Pixso-paragraph-2_71_1,.Pixso-paragraph-2_81_0,.Pixso-paragraph-2_81_1,.Pixso-paragraph-2_82_0,.Pixso-paragraph-2_82_1,.Pixso-paragraph-2_92_0,.Pixso-paragraph-2_92_1,.Pixso-paragraph-2_93_0,.Pixso-paragraph-2_93_1 {
+  line-height: 19.408001px;
+}
+
+.Pixso-span-2_53_0_1,.Pixso-span-2_53_1_1 {
+  text-decoration: none;
+}
+
+.Pixso-frame-2_54,.Pixso-frame-2_63 {
+  width: 100%;
+}
+
+.Pixso-rectangle-2_55 {
+  width: 349px;
+  position: absolute;
+  left: 41px;
+  background-color: rgba(199, 9, 9, 0.74);
+}
+
+.Pixso-group-2_56 {
+  width: 211px;
+  height: 64px;
+  position: absolute;
+  left: 41px;
+  top: 106px;
+}
+
+.Pixso-paragraph-2_57,.Pixso-paragraph-2_58,.Pixso-paragraph-2_59 {
+  text-decoration: none;
+  position: absolute;
+  white-space: pre;
+}
+
+.Pixso-paragraph-2_59,.Pixso-paragraph-2_68,.Pixso-paragraph-2_79 {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 1);
+  left: 124px;
+  top: 807px;
+}
+
+.Pixso-rectangle-2_60 {
+  width: 349px;
+  position: absolute;
+  left: 41px;
+}
+
+.Pixso-text-2_61 {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 56px;
+  top: 234px;
+  white-space: nowrap;
+}
+
+.Pixso-paragraph-2_61_0,.Pixso-span-2_61_0_1,.Pixso-paragraph-2_61_1,.Pixso-span-2_61_1_1 {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-2_61_0_1,.Pixso-span-2_61_1_1 {
+  text-decoration: none;
+}
+
+.Pixso-text-2_62 {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 56px;
+  top: 284px;
+  white-space: nowrap;
+}
+
+.Pixso-paragraph-2_62_0,.Pixso-span-2_62_0_1,.Pixso-paragraph-2_62_1,.Pixso-span-2_62_1_1,.Pixso-frame-2_63 {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-2_62_0_1,.Pixso-span-2_62_1_1 {
+  text-decoration: none;
+}
+
+.Pixso-rectangle-2_64 {
+  width: 349px;
+  position: absolute;
+  left: 41px;
+  background-color: rgba(199, 9, 9, 0.74);
+}
+
+.Pixso-group-2_65 {
+  width: 211px;
+  height: 64px;
+  position: absolute;
+  left: 41px;
+  top: 106px;
+}
+
+.Pixso-paragraph-2_66,.Pixso-paragraph-2_67,.Pixso-paragraph-2_68 {
+  text-decoration: none;
+  position: absolute;
+  white-space: pre;
+}
+
+.Pixso-rectangle-2_69 {
+  width: 349px;
+  position: absolute;
+  left: 41px;
+}
+
+.Pixso-text-2_70 {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 56px;
+  top: 234px;
+  white-space: nowrap;
+}
+
+.Pixso-paragraph-2_70_0,.Pixso-span-2_70_0_1,.Pixso-paragraph-2_70_1,.Pixso-span-2_70_1_1 {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-2_70_0_1,.Pixso-span-2_70_1_1 {
+  text-decoration: none;
+}
+
+.Pixso-text-2_71 {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 56px;
+  top: 284px;
+  white-space: nowrap;
+}
+
+.Pixso-paragraph-2_71_0,.Pixso-span-2_71_0_1,.Pixso-paragraph-2_71_1,.Pixso-span-2_71_1_1 {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-2_71_0_1,.Pixso-span-2_71_1_1 {
+  text-decoration: none;
+}
+
+.Pixso-paragraph-2_72 {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 56px;
+  top: 334px;
+  white-space: pre;
+}
+
+.Pixso-frame-2_74 {
+  width: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-rectangle-2_75 {
+  width: 349px;
+  position: absolute;
+  left: 41px;
+  background-color: rgba(199, 9, 9, 0.74);
+}
+
+.Pixso-group-2_76 {
+  width: 211px;
+  height: 64px;
+  position: absolute;
+  left: 41px;
+  top: 106px;
+}
+
+.Pixso-paragraph-2_77,.Pixso-paragraph-2_78,.Pixso-paragraph-2_79 {
+  text-decoration: none;
+  position: absolute;
+  white-space: pre;
+}
+
+.Pixso-rectangle-2_80 {
+  width: 349px;
+  position: absolute;
+  left: 41px;
+}
+
+.Pixso-text-2_81 {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 56px;
+  top: 234px;
+  white-space: nowrap;
+}
+
+.Pixso-paragraph-2_81_0,.Pixso-span-2_81_0_1,.Pixso-paragraph-2_81_1,.Pixso-span-2_81_1_1 {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-2_81_0_1,.Pixso-span-2_81_1_1 {
+  text-decoration: none;
+}
+
+.Pixso-text-2_82 {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 56px;
+  top: 284px;
+  white-space: nowrap;
+}
+
+.Pixso-paragraph-2_82_0,.Pixso-span-2_82_0_1,.Pixso-paragraph-2_82_1,.Pixso-span-2_82_1_1 {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-2_82_0_1,.Pixso-span-2_82_1_1 {
+  text-decoration: none;
+}
+
+.Pixso-paragraph-2_83,.Pixso-paragraph-2_84 {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 56px;
+  white-space: pre;
+}
+
+.Pixso-paragraph-2_83,.Pixso-paragraph-2_94 {
+  top: 334px;
+}
+
+.Pixso-paragraph-2_84,.Pixso-paragraph-2_95 {
+  top: 365px;
+}
+
+.Pixso-frame-2_85 {
+  width: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-rectangle-2_86 {
+  width: 349px;
+  position: absolute;
+  left: 41px;
+  background-color: rgba(113, 199, 9, 0.74);
+}
+
+.Pixso-group-2_87 {
+  width: 211px;
+  height: 64px;
+  position: absolute;
+  left: 41px;
+  top: 106px;
+}
+
+.Pixso-paragraph-2_88,.Pixso-paragraph-2_89,.Pixso-paragraph-2_90 {
+  text-decoration: none;
+  position: absolute;
+  white-space: pre;
+}
+
+.Pixso-paragraph-2_90 {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 1);
+  left: 103px;
+  top: 807px;
+}
+
+.Pixso-rectangle-2_91 {
+  width: 349px;
+  position: absolute;
+  left: 41px;
+}
+
+.Pixso-text-2_92 {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 56px;
+  top: 234px;
+  white-space: nowrap;
+}
+
+.Pixso-paragraph-2_92_0,.Pixso-span-2_92_0_1,.Pixso-paragraph-2_92_1,.Pixso-span-2_92_1_1 {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-2_92_0_1,.Pixso-span-2_92_1_1 {
+  text-decoration: none;
+}
+
+.Pixso-text-2_93 {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 56px;
+  top: 284px;
+  white-space: nowrap;
+}
+
+.Pixso-paragraph-2_93_0,.Pixso-span-2_93_0_1,.Pixso-paragraph-2_93_1,.Pixso-span-2_93_1_1 {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.Pixso-span-2_93_0_1,.Pixso-span-2_93_1_1 {
+  text-decoration: none;
+}
+
+.Pixso-paragraph-2_94,.Pixso-paragraph-2_95,.Pixso-paragraph-2_96 {
+  text-decoration: none;
+  position: absolute;
+  left: 56px;
+  white-space: pre;
+}
+
+.Pixso-paragraph-2_94,.Pixso-paragraph-2_95 {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.Pixso-paragraph-2_96 {
+  font-size: 20px;
+  color: rgba(15, 106, 30, 1);
+  top: 396px;
+}
+
+
+  </style>
+</head>
+<body>
+<div class="scroll-container">
+  <div id="0_1" class="Pixso-canvas-0_1">
+    <div id="2_1" class="Pixso-frame-2_1">
+      <div id="2_4" class="Pixso-rectangle-2_4" style="cursor: pointer;"></div>
+      <div id="2_9" class="Pixso-group-2_9">
+        <p id="2_6" class="Pixso-paragraph-2_6">Cholima Port</p>
+        <p id="2_7" class="Pixso-paragraph-2_7">By frtzxh1 and SolarTech</p>
+      </div>
+      <p id="2_8" class="Pixso-paragraph-2_8">JAILBREAK</p>
+      <div id="2_10" class="Pixso-rectangle-2_10"></div>
+      <p id="2_11" class="Pixso-paragraph-2_11">RESPRING</p>
+      <p id="2_101" class="Pixso-paragraph-2_101">IOS 15 - 27.3 bd1</p>
+    </div>
+    <div id="2_23" class="Pixso-frame-2_23" style="cursor: pointer;">
+      <div id="2_24" class="Pixso-rectangle-2_24"></div>
+      <div id="2_25" class="Pixso-group-2_25">
+        <p id="2_26" class="Pixso-paragraph-2_26">Cholima Port</p>
+        <p id="2_27" class="Pixso-paragraph-2_27">By frtzxh1 and SolarTech</p>
+      </div>
+      <p id="2_28" class="Pixso-paragraph-2_28">JAILBREAKING...</p>
+      <div id="2_29" class="Pixso-rectangle-2_29"></div>
+      <div id="2_53" class="Pixso-text-2_53">
+        <p id="2_53_0" class="Pixso-paragraph-2_53_0">
+<span id="2_53_0_1" class="Pixso-span-2_53_0_1">YES WE ARE JAILBREAKING</span></p>
+        <p id="2_53_1" class="Pixso-paragraph-2_53_1">
+<span id="2_53_1_1" class="Pixso-span-2_53_1_1">HEEHEE</span></p>
+      </div>
+    </div>
+    <div id="2_54" class="Pixso-frame-2_54" style="cursor: pointer;">
+      <div id="2_55" class="Pixso-rectangle-2_55"></div>
+      <div id="2_56" class="Pixso-group-2_56">
+        <p id="2_57" class="Pixso-paragraph-2_57">Cholima Port</p>
+        <p id="2_58" class="Pixso-paragraph-2_58">By frtzxh1 and SolarTech</p>
+      </div>
+      <p id="2_59" class="Pixso-paragraph-2_59">JAILBREAKING...</p>
+      <div id="2_60" class="Pixso-rectangle-2_60"></div>
+      <div id="2_61" class="Pixso-text-2_61">
+        <p id="2_61_0" class="Pixso-paragraph-2_61_0">
+<span id="2_61_0_1" class="Pixso-span-2_61_0_1">YES WE ARE JAILBREAKING</span></p>
+        <p id="2_61_1" class="Pixso-paragraph-2_61_1">
+<span id="2_61_1_1" class="Pixso-span-2_61_1_1">HEEHEE</span></p>
+      </div>
+      <div id="2_62" class="Pixso-text-2_62">
+        <p id="2_62_0" class="Pixso-paragraph-2_62_0">
+<span id="2_62_0_1" class="Pixso-span-2_62_0_1">WORKING RN RUNNUN EXPLOIT</span></p>
+        <p id="2_62_1" class="Pixso-paragraph-2_62_1">
+<span id="2_62_1_1" class="Pixso-span-2_62_1_1">PRETTY LONG BTW</span></p>
+      </div>
+    </div>
+    <div id="2_63" class="Pixso-frame-2_63" style="cursor: pointer;">
+      <div id="2_64" class="Pixso-rectangle-2_64"></div>
+      <div id="2_65" class="Pixso-group-2_65">
+        <p id="2_66" class="Pixso-paragraph-2_66">Cholima Port</p>
+        <p id="2_67" class="Pixso-paragraph-2_67">By frtzxh1 and SolarTech</p>
+      </div>
+      <p id="2_68" class="Pixso-paragraph-2_68">JAILBREAKING...</p>
+      <div id="2_69" class="Pixso-rectangle-2_69"></div>
+      <div id="2_70" class="Pixso-text-2_70">
+        <p id="2_70_0" class="Pixso-paragraph-2_70_0">
+<span id="2_70_0_1" class="Pixso-span-2_70_0_1">YES WE ARE JAILBREAKING</span></p>
+        <p id="2_70_1" class="Pixso-paragraph-2_70_1">
+<span id="2_70_1_1" class="Pixso-span-2_70_1_1">HEEHEE</span></p>
+      </div>
+      <div id="2_71" class="Pixso-text-2_71">
+        <p id="2_71_0" class="Pixso-paragraph-2_71_0">
+<span id="2_71_0_1" class="Pixso-span-2_71_0_1">WORKING RN RUNNUN EXPLOIT</span></p>
+        <p id="2_71_1" class="Pixso-paragraph-2_71_1">
+<span id="2_71_1_1" class="Pixso-span-2_71_1_1">PRETTY LONG BTW</span></p>
+      </div>
+      <p id="2_72" class="Pixso-paragraph-2_72">GOOD PHONE U GOT HERE</p>
+    </div>
+    <div id="2_74" class="Pixso-frame-2_74" style="cursor: pointer;">
+      <div id="2_75" class="Pixso-rectangle-2_75"></div>
+      <div id="2_76" class="Pixso-group-2_76">
+        <p id="2_77" class="Pixso-paragraph-2_77">Cholima Port</p>
+        <p id="2_78" class="Pixso-paragraph-2_78">By frtzxh1 and SolarTech</p>
+      </div>
+      <p id="2_79" class="Pixso-paragraph-2_79">JAILBREAKING...</p>
+      <div id="2_80" class="Pixso-rectangle-2_80"></div>
+      <div id="2_81" class="Pixso-text-2_81">
+        <p id="2_81_0" class="Pixso-paragraph-2_81_0">
+<span id="2_81_0_1" class="Pixso-span-2_81_0_1">YES WE ARE JAILBREAKING</span></p>
+        <p id="2_81_1" class="Pixso-paragraph-2_81_1">
+<span id="2_81_1_1" class="Pixso-span-2_81_1_1">HEEHEE</span></p>
+      </div>
+      <div id="2_82" class="Pixso-text-2_82">
+        <p id="2_82_0" class="Pixso-paragraph-2_82_0">
+<span id="2_82_0_1" class="Pixso-span-2_82_0_1">WORKING RN RUNNUN EXPLOIT</span></p>
+        <p id="2_82_1" class="Pixso-paragraph-2_82_1">
+<span id="2_82_1_1" class="Pixso-span-2_82_1_1">PRETTY LONG BTW</span></p>
+      </div>
+      <p id="2_83" class="Pixso-paragraph-2_83">GOOD PHONE U GOT HERE</p>
+      <p id="2_84" class="Pixso-paragraph-2_84">SOOOOON DONE</p>
+    </div>
+    <div id="2_85" class="Pixso-frame-2_85">
+      <div id="2_86" class="Pixso-rectangle-2_86"></div>
+      <div id="2_87" class="Pixso-group-2_87">
+        <p id="2_88" class="Pixso-paragraph-2_88">Cholima Port</p>
+        <p id="2_89" class="Pixso-paragraph-2_89">By frtzxh1 and SolarTech</p>
+      </div>
+      <p id="2_90" class="Pixso-paragraph-2_90">DONE POOKIE BEAR</p>
+      <div id="2_91" class="Pixso-rectangle-2_91"></div>
+      <div id="2_92" class="Pixso-text-2_92">
+        <p id="2_92_0" class="Pixso-paragraph-2_92_0">
+<span id="2_92_0_1" class="Pixso-span-2_92_0_1">YES WE ARE JAILBREAKING</span></p>
+        <p id="2_92_1" class="Pixso-paragraph-2_92_1">
+<span id="2_92_1_1" class="Pixso-span-2_92_1_1">HEEHEE</span></p>
+      </div>
+      <div id="2_93" class="Pixso-text-2_93">
+        <p id="2_93_0" class="Pixso-paragraph-2_93_0">
+<span id="2_93_0_1" class="Pixso-span-2_93_0_1">WORKING RN RUNNUN EXPLOIT</span></p>
+        <p id="2_93_1" class="Pixso-paragraph-2_93_1">
+<span id="2_93_1_1" class="Pixso-span-2_93_1_1">PRETTY LONG BTW</span></p>
+      </div>
+      <p id="2_94" class="Pixso-paragraph-2_94">GOOD PHONE U GOT HERE</p>
+      <p id="2_95" class="Pixso-paragraph-2_95">SOOOOON DONE</p>
+      <p id="2_96" class="Pixso-paragraph-2_96">NOW DONE HEEE HEEE</p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+const $ = id => document.getElementById(id);
+
+ $('2_23').dataset.pixsoOriginalDisplay = $('2_23').style.display;
+ $('2_23').style.display = "none";
+ $('2_54').dataset.pixsoOriginalDisplay = $('2_54').style.display;
+ $('2_54').style.display = "none";
+ $('2_63').dataset.pixsoOriginalDisplay = $('2_63').style.display;
+ $('2_63').style.display = "none";
+ $('2_74').dataset.pixsoOriginalDisplay = $('2_74').style.display;
+ $('2_74').style.display = "none";
+ $('2_85').dataset.pixsoOriginalDisplay = $('2_85').style.display;
+ $('2_85').style.display = "none";
+
+CustomEase.create("LINEAR", "0,0,1,1");
+
+const tl_1 = gsap.timeline({ paused: true })
+  .set($('2_1'), {position: 'absolute', top: 0, left: 0})
+  .set($('2_23'), {position: 'absolute', top: 0, left: 0})
+  .set($('2_23'), { display: $('2_23').dataset.pixsoOriginalDisplay ?? '', x: '0%', y: '0%', opacity: 0 })
+    .to($('2_23'), { opacity: 1, duration: '0.6', ease: 'LINEAR' })
+    .to($('2_1'), { opacity: 0, duration: '0.6', ease: 'LINEAR' })
+    .set($('2_1'), { display: 'none' });
+
+$('2_4').addEventListener("click", e => {
+  e.stopPropagation();
+  tl_1.invalidate().restart();
+});
+</script>
+
+</body>
+</html>
